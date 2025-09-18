@@ -11,15 +11,18 @@ D = data['D']
 
 W_star = np.linalg.inv(X.T @ X) @ (X.T @ D)
 
+print(W_star)
 
 Y = X @ W_star
+print(np.mean((Y - D) ** 2))
+
 
 W = np.array([-0.2,0.0,0.45])
 W = W.reshape(-1,1)
 
 epochs = 20
 
-learning_rate = 0.005
+learning_rate = 1
 N = X.shape[0]
 
 MSE_list = []
